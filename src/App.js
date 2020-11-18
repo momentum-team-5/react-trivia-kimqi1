@@ -29,13 +29,13 @@ function App () {
       <h2>Trivia Categories</h2>
       <ul>
         {triviaCat.map((category) => (
-          <li key={category.id}>{category.name}
+          <li key={category.id}>
             <div className='f4 w5'>
               <button
-                onClick={() => setTriviaCat(category)}
+                onClick={() => setSelectedCategory(category)}
                 className='pl0 bw0 bg-white underline pointer blue'
               >
-                {category.Category}
+                {category.name}
               </button>
             </div>
 
