@@ -21,9 +21,9 @@ export default function TriviaQuestions (props) {
       <ul>
         {questions.map((name) => (
           <li key={[name.id]}>
-            <div>Question: {name.question}</div>
-            <div>Correct Answers: {name.correct_answer}</div>
-            <div>Incorrect Answers: {name.incorrect_answers}</div>
+            <div>Question: <span dangerouslySetInnerHTML={{ __html: name.question }} /></div>
+            <div>Correct Answers: <span dangerouslySetInnerHTML={{ __html: name.correct_answer }} /></div>
+            <div>Incorrect Answers: <span dangerouslySetInnerHTML={{ __html: name.incorrect_answers }} /></div>
 
           </li>
         ))}
