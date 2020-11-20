@@ -2,7 +2,7 @@
 import 'tachyons'
 import './App.css'
 import { useEffect, useState } from 'react'
-import TriviaCategory from './components/TriviaCategory'
+import TriviaQuestions from './components/TriviaQuestions'
 
 function App () {
   const [triviaCat, setTriviaCat] = useState([])
@@ -18,7 +18,7 @@ function App () {
 
   if (selectedCategory) {
     return (
-      <TriviaCategory
+      <TriviaQuestions
         category={selectedCategory}
         clearSelectedCategory={() => setSelectedCategory(null)}
       />
@@ -30,10 +30,10 @@ function App () {
       <ul>
         {triviaCat.map((category) => (
           <li key={category.id}>
-            <div className='f4 w5'>
+            <div className='grow h3 mw5 ma4 br-pill pa3 blue bg-yellow category'>
               <button
                 onClick={() => setSelectedCategory(category)}
-                className='pl0 bw0 bg-white underline pointer blue'
+                className='tc grow mw5 pl0 bw0 bg-yellow pointer blue'
               >
                 {category.name}
               </button>
