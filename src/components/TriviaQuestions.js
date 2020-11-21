@@ -7,7 +7,7 @@ export default function TriviaQuestions (props) {
   const [answer, setAnswer] = ('')
 
   useEffect(() => {
-    fetch('https://opentdb.com/api.php?amount=10')
+    fetch('https://opentdb.com/api.php?amount=10' + '&category=' + category.id)
       .then(res => res.json())
       .then(data => {
         setQuestions(data.results)
