@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import TriviaQuestion from './TriviaQuestion'
-
+import 'tachyons'
 export default function TriviaQuestions (props) {
   const { category, clearSelectedCategory } = props
   const [questions, setQuestions] = useState([])
@@ -21,9 +21,9 @@ export default function TriviaQuestions (props) {
       <ul>
         {questions.map((name) => (
           <li key={[name.id]}>
-            <div>Question: <span dangerouslySetInnerHTML={{ __html: name.question }} /></div>
-            <div>Correct Answers: <span dangerouslySetInnerHTML={{ __html: name.correct_answer }} /></div>
-            <div>Incorrect Answers: <span dangerouslySetInnerHTML={{ __html: name.incorrect_answers }} /></div>
+            <div className='bg blue'>Question: <span dangerouslySetInnerHTML={{ __html: name.question }} /></div>
+            <div className='bg green'>Correct Answers: <span dangerouslySetInnerHTML={{ __html: name.correct_answer }} /></div>
+            <div className='bg red'>Incorrect Answers: <span dangerouslySetInnerHTML={{ __html: name.incorrect_answers }} /></div>
 
           </li>
         ))}
